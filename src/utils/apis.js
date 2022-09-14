@@ -23,6 +23,7 @@ const SystemApis = {
 const ChartApis = {
     bottomLeftUrl: apiHost + '/chart/bottom/bottomLeftChart/',
     bottomRightUrl: apiHost + '/chart/bottom/bottomrightChart/',
+    leftoneChart: apiHost + '/chart/centerLeft/leftoneChart/',
 }
 export {
     AccountApis,
