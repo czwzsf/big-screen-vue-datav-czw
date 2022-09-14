@@ -6,6 +6,17 @@ module.exports = {
   publicPath: './',
   chainWebpack: config => {
     config.resolve.alias
-      .set('_c', resolve('src/components')) // key,value自行定义，比如.set('@@', resolve('src/components'))
+        .set('_c', resolve('src/components')) // key,value自行定义，比如.set('@@', resolve('src/components'))
   },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''   //需要rewrite重写的URL
+        }
+      }
+    }
+  }
 }

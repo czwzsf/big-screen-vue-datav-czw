@@ -1,10 +1,11 @@
 <template>
   <div>
+    <!-- 年度开工率 -->
     <Echart
       :options="options"
-      id="centreLeft1Chart"
-      height="220px"
-      width="260px"
+      id="centerLeft1Chart"
+      height="400px"
+      width="100%"
     ></Echart>
   </div>
 </template>
@@ -30,52 +31,87 @@ export default {
     cdata: {
       handler (newData) {
         this.options = {
-          color: [
-            "#37a2da",
-            "#32c5e9",
-            "#9fe6b8",
-            "#ffdb5c",
-            "#ff9f7f",
-            "#fb7293",
-            "#e7bcf3",
-            "#8378ea"
-          ],
           tooltip: {
-            trigger: "item",
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
-          },
-          toolbox: {
-            show: true
-          },
-          calculable: true,
-          legend: {
-            orient: "horizontal",
-            icon: "circle",
-            bottom: 0,
-            x: "center",
-            data: newData.xData,
-            textStyle: {
-              color: "#fff"
+            trigger: "axis",
+            backgroundColor: "rgba(255,255,255,0.1)",
+            axisPointer: {
+              type: "shadow",
+              label: {
+                show: true,
+                backgroundColor: "#7B7DDC"
+              }
             }
           },
+          // legend: {
+          //   data: ["已贯通", "计划贯通", "贯通率"],
+          //   textStyle: {
+          //     color: "#B4B4B4"
+          //   },
+          //   top: "0%"
+          // },
+          grid: {
+            x: "8%",
+            width: "88%",
+            y: "4%"
+          },
+          xAxis: {
+            data: newData.data_mis,
+            axisLine: {
+              lineStyle: {
+                color: "#B4B4B4"
+              }
+            },
+            axisTick: {
+              show: false
+            }
+          },
+          yAxis: [
+            {
+              splitLine: { show: false },
+              axisLine: {
+                lineStyle: {
+                  color: "#B4B4B4"
+                }
+              },
+
+              axisLabel: {
+                formatter: "{value} "
+              }
+            },
+            {
+              splitLine: { show: false },
+              axisLine: {
+                lineStyle: {
+                  color: "#B4B4B4"
+                }
+              },
+              axisLabel: {
+                formatter: "{value} "
+              }
+            }
+          ],
           series: [
             {
-              name: "通过率统计",
-              type: "pie",
-              radius: [10, 50],
-              roseType: "area",
-              center: ["50%", "40%"],
-              data: newData.seriesData
-            }
+              name: "公路",
+              type: "line",
+              smooth: true,
+              showAllSymbol: true,
+              symbol: "emptyCircle",
+              symbolSize: 8,
+              yAxisIndex: 0,
+              itemStyle: {
+                normal: {
+                  color: "#F02FC2"
+                }
+              },
+              data: newData.mis_12
+            },
           ]
         }
       },
       immediate: true,
       deep: true
-    }
-  }
-};
+    },
+  },
+}
 </script>
-
-<style lang="scss" scoped>
-</style>
