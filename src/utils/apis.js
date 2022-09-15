@@ -25,6 +25,7 @@ const ChartApis = {
     bottomRightUrl: apiHost + '/chart/bottom/bottomrightChart/',
     leftoneChart: apiHost + '/chart/centerLeft/leftoneChart/',
     lefttwoChart: apiHost + 'chart/centerLeft/lefttwoChart/',
+    rightoneChart: apiHost + 'chart/centerRight/rightoneChart/',
 }
 export {
     AccountApis,

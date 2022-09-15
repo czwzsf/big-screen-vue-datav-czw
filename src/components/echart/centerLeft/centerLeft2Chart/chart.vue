@@ -4,7 +4,7 @@
     <Echart
       :options="options"
       id="centerLeft1Chart"
-      height="400px"
+      height="350px"
       width="100%"
     ></Echart>
   </div>
@@ -43,62 +43,25 @@ export default {
             }
           },
           grid: {
-            x: "8%",
-            width: "88%",
-            y: "4%"
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
           },
           xAxis: {
-            data: newData.data_mis,
-            axisLine: {
-              lineStyle: {
-                color: "#B4B4B4"
-              }
-            },
-            axisTick: {
-              show: false
-            }
+            type: 'value',
+            boundaryGap: [0,0.01]
           },
-          yAxis: [
-            {
-              splitLine: { show: false },
-              axisLine: {
-                lineStyle: {
-                  color: "#B4B4B4"
-                }
-              },
-
-              axisLabel: {
-                formatter: "{value} "
-              }
-            },
-            {
-              splitLine: { show: false },
-              axisLine: {
-                lineStyle: {
-                  color: "#B4B4B4"
-                }
-              },
-              axisLabel: {
-                formatter: "{value} "
-              }
-            }
-          ],
+          yAxis: {
+            type: 'category',
+            data: newData.platform
+          },
           series: [
             {
-              // name: "公路",
-              type: "line",
-              smooth: true,
-              showAllSymbol: true,
-              symbol: "emptyCircle",
-              symbolSize: 8,
-              yAxisIndex: 0,
-              itemStyle: {
-                normal: {
-                  color: "#1cef05"
-                }
-              },
+              name: '2012',
+              type: 'bar',
               data: newData.mis_12
-            },
+            }
           ]
         }
       },
