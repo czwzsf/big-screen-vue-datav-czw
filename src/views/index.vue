@@ -4,24 +4,24 @@
       <dv-loading v-if="loading">Loading...</dv-loading>
       <div v-else class="host-body">
         <div class="d-flex jc-center">
-          <dv-decoration-10 class="dv-dec-10" />
+          <dv-decoration-10 class="dv-dec-10"/>
           <div class="d-flex jc-center">
-            <dv-decoration-8 class="dv-dec-8" :color="decorationColor" />
+            <dv-decoration-8 class="dv-dec-8" :color="decorationColor"/>
             <div class="title">
               <span class="title-text">大数据可视化平台</span>
               <dv-decoration-6
-                class="dv-dec-6"
-                :reverse="true"
-                :color="['#50e3c2', '#67a1e5']"
+                  class="dv-dec-6"
+                  :reverse="true"
+                  :color="['#50e3c2', '#67a1e5']"
               />
             </div>
             <dv-decoration-8
-              class="dv-dec-8"
-              :reverse="true"
-              :color="decorationColor"
+                class="dv-dec-8"
+                :reverse="true"
+                :color="decorationColor"
             />
           </div>
-          <dv-decoration-10 class="dv-dec-10-s" />
+          <dv-decoration-10 class="dv-dec-10-s"/>
         </div>
 
         <!-- 第二行 -->
@@ -42,7 +42,7 @@
             <div class="react-right mr-4 react-l-s">
               <span class="react-after"></span>
               <span class="text"
-                >{{ dateYear }} {{ dateWeek }} {{ dateDay }}</span
+              >{{ dateYear }} {{ dateWeek }} {{ dateDay }}</span
               >
             </div>
           </div>
@@ -53,17 +53,17 @@
           <div class="content-box">
             <div>
               <dv-border-box-12>
-                <centerLeft1 />
+                <centerLeft1/>
               </dv-border-box-12>
             </div>
             <div>
               <dv-border-box-12>
-                <centerLeft2 />
+                <centerLeft2/>
               </dv-border-box-12>
             </div>
             <div>
               <dv-border-box-13>
-                <centerRight1 />
+                <centerRight1/>
               </dv-border-box-13>
             </div>
           </div>
@@ -71,10 +71,13 @@
           <!-- 第四行数据 -->
           <div class="bottom-box">
             <dv-border-box-13>
-              <bottomLeft />
+              <bottomLeft/>
+            </dv-border-box-13>
+            <dv-border-box-13>
+              <bottomLeft/>
             </dv-border-box-13>
             <dv-border-box-12>
-              <bottomRight />
+              <bottomRight/>
             </dv-border-box-12>
           </div>
         </div>
@@ -85,7 +88,7 @@
 
 <script>
 import drawMixin from "../utils/drawMixin";
-import { formatTime } from '../utils/index.js'
+import {formatTime} from '../utils/index.js'
 import centerLeft1 from './centerLeft1'
 import centerLeft2 from './centerLeft2'
 import centerRight1 from './centerRight1'
@@ -95,7 +98,7 @@ import bottomLeft from './bottomLeft'
 import bottomRight from './bottomRight'
 
 export default {
-  mixins: [ drawMixin ],
+  mixins: [drawMixin],
   data() {
     return {
       timing: null,
@@ -120,7 +123,7 @@ export default {
     this.timeFn()
     this.cancelLoading()
   },
-  beforeDestroy () {
+  beforeDestroy() {
     clearInterval(this.timing)
   },
   methods: {
