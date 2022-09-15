@@ -92,7 +92,7 @@ export default {
           ],
           series: [
             {
-              name: "公路",
+              // name: "公路",
               type: "line",
               smooth: true,
               showAllSymbol: true,
@@ -101,7 +101,7 @@ export default {
               yAxisIndex: 0,
               itemStyle: {
                 normal: {
-                  color: "#F02FC2"
+                  color: "#1cef05"
                 }
               },
               data: newData.mis_12

@@ -6,12 +6,12 @@
           <icon name="chart-pie" class="text-icon"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">地图数据</span>
-          <dv-decoration-1 class="dv-dec-1" />
+          <span class="fs-xl text mx-2">6DM各平台最近月mis</span>
+<!--          <dv-decoration-1 class="dv-dec-1"/>-->
         </div>
       </div>
-      <div class="d-flex jc-center">
-        <CenterLeft2Chart />
+      <div>
+        <CenterLeft2Chart/>
       </div>
     </div>
   </div>
@@ -19,6 +19,7 @@
 
 <script>
 import CenterLeft2Chart from "@/components/echart/centerLeft/centerLeft2Chart";
+
 export default {
   components: {
     CenterLeft2Chart
@@ -34,23 +35,28 @@ export default {
   height: $box-height;
   min-width: $box-width;
   border-radius: 5px;
+
   .bg-color-black {
     height: $box-height - 30px;
     border-radius: 10px;
   }
+
   .text {
     color: #c3cbde;
   }
+
   .dv-dec-1 {
     position: relative;
     width: 100px;
     height: 20px;
     top: -3px;
   }
+
   .chart-box {
     margin-top: 16px;
     width: 170px;
     height: 170px;
+
     .active-ring-name {
       padding-top: 10px;
     }
