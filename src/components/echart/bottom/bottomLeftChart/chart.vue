@@ -1,19 +1,19 @@
 <template>
   <div>
-    <!-- 年度开工率 -->
     <Echart
-      :options="options"
-      id="bottomLeftChart"
-      height="480px"
-      width="100%"
+        :options="options"
+        id="bottomLeftChart"
+        height="480px"
+        width="100%"
     ></Echart>
   </div>
 </template>
 
 <script>
 import Echart from '@/common/echart'
+
 export default {
-  data () {
+  data() {
     return {
       options: {},
     };
@@ -29,7 +29,7 @@ export default {
   },
   watch: {
     cdata: {
-      handler (newData) {
+      handler(newData) {
         this.options = {
           tooltip: {
             trigger: "axis",
@@ -43,31 +43,54 @@ export default {
             }
           },
           legend: {
-            data: ["已贯通", "计划贯通", "贯通率"],
+            data: ["mis3", "mis6", "mis9", "mis12"],
             textStyle: {
               color: "#B4B4B4"
             },
-            top: "0%"
+            top: "5%"
           },
           grid: {
             x: "8%",
             width: "88%",
             y: "4%"
           },
-          xAxis: {
-            data: newData.category,
-            axisLine: {
-              lineStyle: {
-                color: "#B4B4B4"
-              }
+          xAxis: [
+            {
+              type: 'category',
+              axisTick: {
+                alignWithLabel: true
+              },
+              axisLine: {
+                onZero: false,
+              },
+              axisPointer: {
+                label: {
+                  formatter: function (params) {
+                    return (
+                        'Precipitation  ' +
+                        params.value +
+                        (params.seriesData.length ? '：' + params.seriesData[0].data : '')
+                    );
+                  }
+                }
+              },
+              // prettier-ignore
+              data: newData.date_s
             },
-            axisTick: {
-              show: false
-            }
-          },
+            {
+              data: newData.Number_of_samples,
+              axisLine: {
+                lineStyle: {
+                  color: "#B4B4B4"
+                }
+              },
+              axisTick: {
+                show: false
+              }
+            }],
           yAxis: [
             {
-              splitLine: { show: false },
+              splitLine: {show: false},
               axisLine: {
                 lineStyle: {
                   color: "#B4B4B4"
@@ -79,7 +102,7 @@ export default {
               }
             },
             {
-              splitLine: { show: false },
+              splitLine: {show: false},
               axisLine: {
                 lineStyle: {
                   color: "#B4B4B4"
@@ -92,53 +115,65 @@ export default {
           ],
           series: [
             {
-              name: "贯通率",
+              name: "mis3",
               type: "line",
               smooth: true,
               showAllSymbol: true,
               symbol: "emptyCircle",
               symbolSize: 8,
-              yAxisIndex: 1,
+              yAxisIndex: 0,
               itemStyle: {
                 normal: {
                   color: "#F02FC2"
                 }
               },
-              data: newData.rateData
+              data: newData.mis3
             },
             {
-              name: "已贯通",
-              type: "bar",
-              barWidth: 10,
+              name: "mis6",
+              type: "line",
+              smooth: true,
+              showAllSymbol: true,
+              symbol: "emptyCircle",
+              symbolSize: 8,
+              yAxisIndex: 0,
               itemStyle: {
                 normal: {
-                  barBorderRadius: 5,
-                  color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                    { offset: 0, color: "#956FD4" },
-                    { offset: 1, color: "#3EACE5" }
-                  ])
+                  color: "#1cef05"
                 }
               },
-              data: newData.barData
+              data: newData.mis6
             },
             {
-              name: "计划贯通",
-              type: "bar",
-              barGap: "-100%",
-              barWidth: 10,
+              name: "mis9",
+              type: "line",
+              smooth: true,
+              showAllSymbol: true,
+              symbol: "emptyCircle",
+              symbolSize: 8,
+              yAxisIndex: 0,
               itemStyle: {
                 normal: {
-                  barBorderRadius: 5,
-                  color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                    { offset: 0, color: "rgba(156,107,211,0.8)" },
-                    { offset: 0.2, color: "rgba(156,107,211,0.5)" },
-                    { offset: 1, color: "rgba(156,107,211,0.2)" }
-                  ])
+                  color: "#992ff0"
                 }
               },
-              z: -12,
-              data: newData.lineData
-            }
+              data: newData.mis9
+            },
+            {
+              name: "mis12",
+              type: "line",
+              smooth: true,
+              showAllSymbol: true,
+              symbol: "emptyCircle",
+              symbolSize: 8,
+              yAxisIndex: 0,
+              itemStyle: {
+                normal: {
+                  color: "#f02f3f"
+                }
+              },
+              data: newData.mis12
+            },
           ]
         }
       },

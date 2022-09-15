@@ -61,14 +61,6 @@
                 <centerLeft2 />
               </dv-border-box-12>
             </div>
-            <!-- 中间 -->
-<!--            <div>-->
-<!--              <center />-->
-<!--            </div>-->
-            <!-- 中间 -->
-<!--            <div>-->
-<!--              <centerRight2 />-->
-<!--            </div>-->
             <div>
               <dv-border-box-13>
                 <centerRight1 />

@@ -6,7 +6,7 @@
           <icon name="chart-bar" class="text-icon"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">数据统计图</span>
+          <span class="fs-xl text mx-2">J6公路生产月MIS</span>
         </div>
       </div>
       <div>
