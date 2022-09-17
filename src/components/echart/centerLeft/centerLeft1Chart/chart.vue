@@ -94,7 +94,7 @@ export default {
             {
               // name: "公路",
               type: "line",
-              smooth: true,
+              smooth: false,
               showAllSymbol: true,
               symbol: "emptyCircle",
               symbolSize: 8,

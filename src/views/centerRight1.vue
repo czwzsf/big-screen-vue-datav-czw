@@ -40,8 +40,8 @@ export default {
         headerBGC: '#062a79', //表头
         oddRowBGC: '#8c0ed5', //奇数行
         evenRowBGC: '#e1786e', //偶数行
-        index: true,
-        columnWidth: [100],
+        index: false,
+        columnWidth: [150],
         align: ['center']
       }
     }

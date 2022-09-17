@@ -19,11 +19,11 @@ export default {
     Chart,
   },
   mounted() {
-    this.getbottomleftChartDataList()
+    this.getBottomCenterChartDataList()
   },
   methods: {
-    getbottomleftChartDataList() {
-      ajax.get(ChartApis.bottomLeftUrl).then(({data}) => {
+    getBottomCenterChartDataList() {
+      ajax.get(ChartApis.bottomCenterUrl).then(({data}) => {
         this.cdata = data
       })
     }

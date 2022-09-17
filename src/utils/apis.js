@@ -23,6 +23,7 @@ const SystemApis = {
 const ChartApis = {
     bottomLeftUrl: apiHost + '/chart/bottom/bottomLeftChart/',
     bottomRightUrl: apiHost + '/chart/bottom/bottomrightChart/',
+    bottomCenterUrl:apiHost + '/chart/bottom/bottomCenterChart/',
     leftoneChart: apiHost + '/chart/centerLeft/leftoneChart/',
     lefttwoChart: apiHost + 'chart/centerLeft/lefttwoChart/',
     rightoneChart: apiHost + 'chart/centerRight/rightoneChart/',

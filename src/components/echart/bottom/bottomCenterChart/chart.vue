@@ -43,7 +43,7 @@ export default {
             }
           },
           legend: {
-            data: ["mis3", "mis6", "mis9", "mis12"],
+            data: [],
             textStyle: {
               color: "#B4B4B4"
             },
@@ -56,29 +56,7 @@ export default {
           },
           xAxis: [
             {
-              type: 'category',
-              axisTick: {
-                alignWithLabel: true
-              },
-              axisLine: {
-                onZero: false,
-              },
-              axisPointer: {
-                label: {
-                  formatter: function (params) {
-                    return (
-                        'Precipitation  ' +
-                        params.value +
-                        (params.seriesData.length ? '：' + params.seriesData[0].data : '')
-                    );
-                  }
-                }
-              },
-              // prettier-ignore
-              data: newData.date_s
-            },
-            {
-              data: newData.Number_of_samples,
+              data: newData.date_of_claim,
               axisLine: {
                 lineStyle: {
                   color: "#B4B4B4"
@@ -115,7 +93,6 @@ export default {
           ],
           series: [
             {
-              name: "mis3",
               type: "line",
               smooth: false,
               showAllSymbol: true,
@@ -127,52 +104,7 @@ export default {
                   color: "#F02FC2"
                 }
               },
-              data: newData.mis3
-            },
-            {
-              name: "mis6",
-              type: "line",
-              smooth: false,
-              showAllSymbol: true,
-              symbol: "emptyCircle",
-              symbolSize: 8,
-              yAxisIndex: 0,
-              itemStyle: {
-                normal: {
-                  color: "#1cef05"
-                }
-              },
-              data: newData.mis6
-            },
-            {
-              name: "mis9",
-              type: "line",
-              smooth: false,
-              showAllSymbol: true,
-              symbol: "emptyCircle",
-              symbolSize: 8,
-              yAxisIndex: 0,
-              itemStyle: {
-                normal: {
-                  color: "#992ff0"
-                }
-              },
-              data: newData.mis9
-            },
-            {
-              name: "mis12",
-              type: "line",
-              smooth: false,
-              showAllSymbol: true,
-              symbol: "emptyCircle",
-              symbolSize: 8,
-              yAxisIndex: 0,
-              itemStyle: {
-                normal: {
-                  color: "#f02f3f"
-                }
-              },
-              data: newData.mis12
+              data: newData.frequency
             },
           ]
         }
